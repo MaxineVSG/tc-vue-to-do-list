@@ -1,7 +1,8 @@
 <template>
-  <a
+  <button
     class="flex items-center justify-center w-7 h-7 hover:bg-gray-100 rounded-full mx-2 flex-none"
     @click="handleClick"
+    :aria-label="ariaLabel"
   >
     <svg
       class="h-5 w-5"
@@ -17,13 +18,14 @@
     >
       <slot />
     </svg>
-  </a>
+  </button>
 </template>
 
 <script setup>
 const props = defineProps({
   onClick: Function,
-  color: String
+  color: String,
+  ariaLabel: String
 })
 
 const handleClick = () => {

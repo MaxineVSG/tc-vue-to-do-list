@@ -40,27 +40,42 @@
     }}</span>
 
     <!-- Edit Task -->
-    <IconButton @click="toggleEditMode" v-if="!isEditing && !task.completed" color="text-blue-300">
+    <IconButton
+      @click="toggleEditMode"
+      v-if="!isEditing && !task.completed"
+      aria-label="Edit Task"
+      color="text-blue-300"
+    >
       <path d="M9 7 h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3" />
       <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3" />
       <line x1="16" y1="5" x2="19" y2="8" />
     </IconButton>
 
     <!-- Save Edit -->
-    <IconButton @click="saveEdit" v-if="isEditing" color="text-green-500">
+    <IconButton
+      @click="saveEdit"
+      v-if="isEditing"
+      aria-label="Save Task Edit"
+      color="text-green-500"
+    >
       <path stroke="none" d="M0 0h24v24H0z" />
       <path d="M5 12l5 5l10 -10" />
     </IconButton>
 
     <!-- Cancel Edit -->
-    <IconButton @click="cancelEdit" v-if="isEditing" color="text-grey-500">
+    <IconButton
+      @click="cancelEdit"
+      v-if="isEditing"
+      aria-label="Cancel Task Edit"
+      color="text-grey-500"
+    >
       <path stroke="none" d="M0 0h24v24H0z" />
       <line x1="18" y1="6" x2="6" y2="18" />
       <line x1="6" y1="6" x2="18" y2="18" />
     </IconButton>
 
     <!-- Delete Task -->
-    <IconButton @click="$emit('deleteTask', task.id)" color="text-red-500">
+    <IconButton @click="$emit('deleteTask', task.id)" aria-label="Delete Task" color="text-red-500">
       <path stroke="none" d="M0 0h24v24H0z" />
       <line x1="4" y1="7" x2="20" y2="7" />
       <line x1="10" y1="11" x2="10" y2="17" />

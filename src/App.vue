@@ -2,14 +2,20 @@
   <div id="app" class="min-h-screen flex p-6 md:px-80">
     <div class="mx-auto">
       <img class="mb-6 w-40" src="./assets/logo.svg" alt="True Compliance Logo" />
+      <h1>To Dos</h1>
       <!-- Add New Task -->
-      <div class="flex items-center space-x-4 mb-6">
+      <div class="flex items-center space-x-4 mb-6 relative">
         <input
           v-model="newTask"
+          id="newTaskInput"
           @keyup.enter="addTask"
-          placeholder="Add a new task"
           class="w-80 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
+        <label
+          for="newTaskInput"
+          class="absolute text-sm text-gray-500 -translate-y-6 scale-80 top-4 z-10 bg-white px-1 rounded-md"
+          >Create a new task</label
+        >
         <TcButton @click="addTask" variant="default" :disabled="!newTask"> Add Task </TcButton>
       </div>
 
